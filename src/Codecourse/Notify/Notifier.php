@@ -3,6 +3,7 @@
 namespace Codecourse\Notify;
 
 use Codecourse\Notify\Storage\Session;
+use Illuminate\Support\Arr;
 
 class Notifier
 {
@@ -100,6 +101,6 @@ class Notifier
      */
     public function option($key, $default = null)
     {
-        return array_get($this->options(true), $key, $default);
+        return Arr::get($this->options(true), $key, $default);
     }
 }
